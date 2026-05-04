@@ -7,8 +7,10 @@ pipeline {
     }
 
     environment {
-        APP_NAME  = "SistemaEducativo"
-        RECIPIENT = "admin@empresa.com"
+        APP_NAME   = "SistemaEducativo"
+        RECIPIENT  = "admin@empresa.com"
+        PYTHON_HOME = "C:\\Users\\Sergio\\AppData\\Local\\Python\\pythoncore-3.14-64"
+        PATH        = "C:\\Users\\Sergio\\AppData\\Local\\Python\\pythoncore-3.14-64;C:\\Users\\Sergio\\AppData\\Local\\Python\\pythoncore-3.14-64\\Scripts;${env.PATH}"
     }
 
     stages {
