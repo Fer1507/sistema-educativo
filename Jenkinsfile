@@ -98,8 +98,7 @@ pipeline {
             )
         }
         always {
-            echo 'Limpiando workspace...'
-            cleanWs()
+            echo 'Pipeline finalizado.'
         }
     }
 }
