@@ -42,9 +42,9 @@ pipeline {
             steps {
                 echo 'Construyendo artefactos de la aplicación...'
                 bat '''
-                    if not exist dist mkdir dist
-                    xcopy /E /I /Y src dist\\src
-                    echo Build completado: %DATE% %TIME% > dist\\build-info.txt
+                    if not exist C:\\SistemaEducativo mkdir C:\\SistemaEducativo
+                    xcopy /E /I /Y src C:\\SistemaEducativo\\src
+                    echo Build completado: %DATE% %TIME% > C:\\SistemaEducativo\\build-info.txt
                 '''
             }
         }
@@ -54,10 +54,10 @@ pipeline {
                 echo 'Desplegando aplicación en servidor local...'
                 bat '''
                     echo Deteniendo servicio anterior (si existe)...
-                    taskkill /F /IM python.exe /FI "WINDOWTITLE eq app*" 2>nul || echo Sin proceso previo
+                    taskkill /F /FI "IMAGENAME eq python.exe" 2>nul || echo Sin proceso previo
                     echo Iniciando nueva version...
-                    if not exist logs mkdir logs
-                    start /B python dist\\src\\app.py > logs\\app.log 2>&1
+                    if not exist C:\\SistemaEducativo\\logs mkdir C:\\SistemaEducativo\\logs
+                    start /B python C:\\SistemaEducativo\\src\\app.py 1>C:\\SistemaEducativo\\logs\\app.log 2>&1
                     echo Despliegue completado.
                 '''
             }
