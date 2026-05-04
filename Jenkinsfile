@@ -18,7 +18,7 @@ pipeline {
                 echo "Descargando código del proyecto ${APP_NAME} desde GitHub..."
                 git branch: 'main',
                     credentialsId: 'github-credentials',
-                    url: 'https://github.com/usuario/proyecto.git'
+                    url: 'https://github.com/Fer1507/sistema-educativo.git'
             }
         }
 
